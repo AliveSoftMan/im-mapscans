@@ -1,0 +1,155 @@
+.tour {
+  padding: 66px 0px;
+  background-color: #F3FDFF;
+  color: #1f0988;
+}
+.tour__header {
+  margin: 30px;
+}
+.tour__headerContent {
+
+  margin-left: 4%;
+}
+
+.bg-blue{
+  background-color: #1f0988;
+  color: white;
+}
+
+.tour__headerContent > .under-bar{
+  border-bottom: 3px solid #4678AE;
+  font-size: 5px;
+  width: 120px;
+}
+.tour__headerContent > h1 {
+  font-weight: 500 !important;
+  margin-bottom: 0px !important;
+  font-size: 36px !important;
+  line-height: 42px;
+  margin-top: 21px;
+  font-family: 'PoppinsSemiBold';
+
+}
+.tour__headerContent>h5{
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.img-blue-bg-left{
+  background-repeat: no-repeat;
+  background-image: url('../imgs/blue-bg.png');
+  background-size: contain;
+  padding: 32px 0;
+  padding-left: 62px;
+
+}
+
+.img-blue-bg-right{
+  background-position: right;
+}
+
+.tour__headerContent > p{
+  margin-top: 0px;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'PoppinsLight';
+}
+
+.tour__headerContent>h3{
+  font-weight: 400;
+  margin-top: 1em;
+}
+.bar-slide-content{
+  width: 100%;
+}
+
+.bar-slide-content>div>div{
+  border-radius: 12px;
+}
+
+
+.bar-slide-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.tour__headerContent>.sell-faster{
+  margin-top: 12%;
+}
+.tour__headerContent > button:hover {
+  color: #1f0988;
+  background-color: white;
+  border: 2px solid #1f0988;
+}
+.tour__headerContent > button {
+  background-color: #4678AE;
+  color: white;
+  font-size: 14px;
+  padding: 3px 21px;
+  text-transform: none;
+  margin-top: 3%;
+}
+
+.tour__headerContent a .learn-more-btn{
+  color: #1f0988;
+  background-color: white;
+  border: 2px solid white;
+}
+
+.tour__headerContent a .learn-more-btn:hover{
+  color: white;
+  background-color: #1f0988;
+  border: 2px solid white;
+
+}
+
+.tour__header > h3 {
+  color: #333;
+  max-width: 500px;
+  margin-top: 20px;
+  font-weight: 400 !important;
+  margin-bottom: 20px !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+}
+.tour__item {
+  display: flex;
+  padding: 10px;
+  overflow-x: scroll;
+}
+.tour__itemLeft {
+  flex: 0.5;
+}
+.tour__itemLeft > h1 {
+  color: white;
+}
+.tour__itemRight {
+  flex: 0.5;
+  margin-right: 10px;
+}
+.tour__itemRight > h1 {
+  color: white;
+}
+.tour__itemRightObject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tour__itemRightObject > h1 {
+  color: white;
+}
+.tour__itemRightObjectLow {
+  height: 100%;
+}
+
+.bg-white{
+  background-color: white;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 375px) {
+  
+
+}

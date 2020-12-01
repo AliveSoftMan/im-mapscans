@@ -1,0 +1,51 @@
+.processcard {
+  border-radius: 10px;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+  min-width: 300px;
+  min-height: 252px;
+  background-color: #4678AE;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.processcard:hover {
+  transform: scale(1.07);
+}
+.processcard__number {
+  margin: auto;
+  background-color: white;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6%;
+  margin-bottom: 0;
+}
+
+.processcard__number > h1 {
+  font-size: 18px;
+}
+
+.processcard__info {
+  border-radius: 10px;
+  margin-top: -9px;
+  padding: 20px;
+  border: 1;
+}
+.processcard__info > h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+}
+.processcard__info > h4 {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  line-height: 24px;
+}

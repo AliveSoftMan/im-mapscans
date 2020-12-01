@@ -1,0 +1,93 @@
+.price-comp h1{
+  text-align: center;
+  margin-top: 64px;
+  font-size: 42px;
+}
+
+.price-comp  h3{
+  text-align: center;
+  font-weight: 200;
+  font-family: 'PoppinsLight';
+}
+
+.price-comp table{
+  width: 100%;
+  color: #1f0988;
+  margin-top: 42px;
+  min-width: 672px;
+}
+
+.price-comp table td,th{
+  text-align: center;
+  padding: 1%;
+
+}
+
+.price-comp table tr>td{
+  font-size: 0.9vw;
+  font-weight: 200;
+  font-family: 'PoppinsLight';
+  width: 20%;
+}
+
+.price-comp table tr>td>span{
+  font-size: 0.8vw;
+  font-weight: 200;
+  font-family: 'PoppinsLight';
+  width: 20%;
+}
+
+.price-comp table tr>td:last-child{
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: 'PoppinsSemiBold';
+  width: 30%;
+}
+
+.price-comp table tr>td:first-child{
+
+  font-family: 'PoppinsRegular';
+  font-weight: 600;
+  font-size: 0.9vw;
+  width: 20%;
+}
+
+.price-comp table tr>td:first-child{
+  text-align: left;
+}
+
+.price-comp table td>img{
+  width: 36px;
+}
+
+.price-comp table th{
+  font-size: 1.2vw;
+}
+
+.price-comp table th{
+  border-bottom: 1px solid #bdbec0;
+}
+
+.price-comp table>tbody>tr:nth-child(4)>td{
+  border-bottom: 1px solid #bdbec0;
+}
+
+.price-comp table th:first-child{
+  border: none;
+}
+
+@media screen and (max-width: 720px) {
+
+.price-comp table td{
+  font-size: 17px;
+}
+
+.price-comp table th{
+
+  font-size: 14px;
+}
+
+
+
+
+}

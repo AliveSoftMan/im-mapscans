@@ -1,0 +1,78 @@
+.feature {
+  color: white;
+  background-color: #1f0988;
+  padding-bottom: 100px;
+}
+.feature__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+.feature__header > h1 {
+  font-weight: 500 !important;
+  margin-bottom: 0px !important;
+  line-height: 26px !important;
+  font-family: 'PoppinsSemiBold';
+  font-size: 3vw;
+}
+.feature__header > h3 {
+  text-align: center;
+  margin: 24px;
+  font-weight: 400 !important;
+  margin-bottom: 0px !important;
+  font-size: 21px !important;
+  line-height: 36px !important;
+  max-width: 1100px;
+}
+
+.tour-item:hover {
+  border-color: lightgreen !important;
+}
+.feature__header .tour-item{
+  background-color: #1f0988;
+}
+.feature__header > p {
+  text-align: center;
+  margin: 12px;
+}
+.feature__card {
+  display: flex;
+  padding: 30px;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+}
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: inherit;
+}
+
+@media screen and (max-width: 1012px) {
+  .feature__header > h1 {
+    font-size: 32px !important;
+    line-height: 36px !important;
+  }
+
+.feature__header {
+  padding-top: 48px;
+}
+
+}
+@media screen and (max-width: 375px) {
+  .feature__header > h1 {
+    font-weight: 500 !important;
+    margin-bottom: 0px !important;
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+  .feature__header > h3 {
+    margin: 24px;
+    font-weight: 400 !important;
+    margin-bottom: 0px !important;
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .feature__card {
+    padding: 15px;
+  }
+}

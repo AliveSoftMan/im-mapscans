@@ -1,0 +1,99 @@
+.floorplan {
+  padding: 30px;
+  background-color: white;
+}
+.floorplan__header {
+  margin: 30px;
+}
+.floorplan__headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.floorplan__headerContent > h1 {
+  color: #333;
+  font-weight: 500 !important;
+  margin-bottom: 0px !important;
+  font-size: 36px !important;
+  line-height: 26px !important;
+}
+.floorplan__headerContent > button:hover {
+  color: #6156fb;
+  background-color: white;
+}
+.floorplan__headerContent > button {
+  background-color: #6156fb;
+  color: white;
+  text-transform: inherit !important;
+}
+.floorplan__header > h3 {
+  color: #333;
+  max-width: 500px;
+  margin-top: 20px;
+  font-weight: 400 !important;
+  margin-bottom: 20px !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+}
+.floorplan__item {
+  display: flex;
+  padding: 10px;
+  overflow-x: scroll;
+}
+.floorplan__itemLeft {
+  flex: 0.5;
+}
+.floorplan__itemRight {
+  flex: 0.5;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 375px) {
+  .floorplan {
+    padding: 10px;
+    background-color: white;
+  }
+  .floorplan__header {
+    margin: 10px;
+  }
+  .floorplan__headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .floorplan__headerContent > h1 {
+    color: #222;
+    font-weight: 500 !important;
+    margin-bottom: 0px !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+  .floorplan__headerContent > button {
+    background-color: #6156fb;
+    color: white;
+    font-size: 12px !important;
+    text-transform: inherit !important;
+  }
+  .floorplan__header > h3 {
+    color: #222;
+    max-width: 500px;
+    margin-top: 10px;
+    font-weight: 300 !important;
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+  .floorplan__item {
+    display: flex;
+    padding: 4px;
+    overflow-x: scroll;
+    flex-direction: column;
+  }
+  .floorplan__itemLeft {
+    flex: 0.5;
+  }
+  .floorplan__itemRight {
+    flex: 0.5;
+    margin-right: 10px;
+  }
+}

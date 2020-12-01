@@ -1,0 +1,47 @@
+
+.getintouch{
+  width: 92%;
+  margin-left: 8%;
+}
+
+.getintouch>.process__card{
+  padding-top: 72px;
+}
+
+.getintouch .card-items> h1{
+  color: #1f0988;
+  text-align: left;
+}
+
+.card-items> div{
+  margin-top: 21px;
+}
+
+.getintouch .contact__form{
+  margin: 0;
+  box-shadow: none;
+}
+
+.getintouch .contact__form h1{
+  font-size: 3em;
+  text-align: left;
+  font-weight: bold;
+  color: #1f0988;
+  margin-left: 20px;
+}
+
+.getintouch .contact__textField{
+  margin: 2% !important;
+}
+
+.contact__button > button {
+	background-color: #1f0988;
+	font-size: 12px !important;
+	color: white !important;
+	text-transform: inherit !important;
+	margin: 20px !important;
+}
+.contact__button > button:hover {
+	background-color: white !important;
+	color: #1f0988 !important;
+}

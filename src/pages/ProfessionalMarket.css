@@ -1,0 +1,135 @@
+.pm_tour {
+  background-color: #F3FDFF;
+}
+.tour__header {
+  margin: 30px;
+}
+
+.grid-headercontent{
+  display: flex;
+  align-items: center;
+  padding: 21px 0;
+
+}
+.tour__headerContent {
+  width: 88%;
+  
+}
+
+.makeStyles-root-1>.MuiGrid-spacing-xs-5>.MuiGrid-item{
+  padding: 0;
+}
+
+.pm_tour .tour__headerContent > h1 {
+
+  color: #1f0988;
+  font-weight: 400 !important;
+  margin-bottom: 0px !important;
+  font-size: 2.2vw !important;
+  line-height: 42px;
+  margin-top: 21px;
+  font-family: PoppinsSemiBold;
+
+}
+
+.pm_tour .tour__headerContent > p{
+  color: #1f0988;
+  font-weight: 200 !important;
+  font-family: PoppinsLight;
+  font-size: 16px;
+}
+
+.img-blue-bg{
+  background-repeat: no-repeat;
+  background-image: url(/static/media/blue-bg.c82d09d7.png);
+  background-size: contain;
+  margin-top: 12%;
+
+}
+
+.img-blue-bg-right{
+  background-position: right;
+}
+
+
+.tour__headerContent>h3{
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+
+.tour__headerContent>.sell-faster{
+  margin-top: 12%;
+}
+.img-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tour__headerContent a {
+  text-decoration: none;
+}
+.tour__headerContent a button:hover {
+  color: #1f0988;
+  background-color: white;
+}
+.tour__headerContent a button {
+  background-color: #1f0988;
+  color: white;
+  font-size: 14px;
+  padding: 3px 21px;
+  border-radius: 12px;
+  margin-top: 3%;
+}
+.tour__header > h3 {
+  color: #333;
+  max-width: 500px;
+  margin-top: 20px;
+  font-weight: 400 !important;
+  margin-bottom: 20px !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+}
+.tour__item {
+  display: flex;
+  padding: 10px;
+  overflow-x: scroll;
+}
+.tour__itemLeft {
+  flex: 0.5;
+}
+.tour__itemLeft > h1 {
+  color: white;
+}
+.tour__itemRight {
+  flex: 0.5;
+  margin-right: 10px;
+}
+.tour__itemRight > h1 {
+  color: white;
+}
+.tour__itemRightObject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tour__itemRightObject > h1 {
+  color: white;
+}
+.tour__itemRightObjectLow {
+  height: 100%;
+}
+
+.bg-white{
+  background-color: white;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1012px) {
+  
+  .pm_tour .tour__headerContent > h1 {
+    font-size: 21px !important;
+    line-height: 28px !important;
+  }
+  
+}

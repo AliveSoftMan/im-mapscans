@@ -1,0 +1,114 @@
+.scannerform {
+	background-color: #6156fb;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.scannerform>h1 {
+	font-weight: 500 !important;
+	margin-top: 50px !important;
+	margin-bottom: 30px !important;
+	font-size: 36px !important;
+	line-height: 26px !important;
+	color: white !important;
+	text-align: center;
+}
+
+.scannerform__form {
+	background-color: white;
+	width: 50vw;
+	margin: 30px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+}
+
+.scannerform__formField {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.scannerform__textField {
+	width: 100% !important;
+	margin: 20px !important;
+}
+
+.scannerform__inputField {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.scannerform__inputFieldMessage {
+	width: 95% !important;
+	margin: 20px !important;
+}
+
+.scannerform__inputField>button {
+	background-color: #6156fb;
+	font-size: 18px !important;
+	color: white !important;
+	text-transform: inherit !important;
+	margin: 20px !important;
+}
+
+.scannerform__inputField>button:hover {
+	background-color: white !important;
+	color: #6156fb !important;
+}
+
+@media screen and (max-width: 375px) {
+	.scannerform__form {
+		background-color: white;
+		width: 80vw;
+		margin: 30px;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+	}
+
+	.scannerform__formField {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.scannerform__textField {
+		width: 100% !important;
+		margin: 10px !important;
+	}
+
+	.scannerform__inputFieldMessage {
+		width: 100% !important;
+		margin: 10px !important;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.scannerform__form {
+		background-color: white;
+		width: 80vw;
+		margin: 30px;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+	}
+
+	.scannerform__formField {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.scannerform__textField {
+		width: 100% !important;
+		margin: 10px !important;
+	}
+
+	.scannerform__inputFieldMessage {
+		width: 100% !important;
+		margin: 10px !important;
+	}
+}

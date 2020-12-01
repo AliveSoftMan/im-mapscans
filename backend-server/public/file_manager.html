@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>File Manager</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="Oculux Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
+    <meta name="author" content="GetBootstrap, design by: puffintheme.com">
+    <link rel="icon" href="/img/building.ico">
+
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="./template/bootstrap.min.css">
+    <link rel="stylesheet" href="./template/font-awesome.min.css">
+    <link rel="stylesheet" href="./template/vivify.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./template/site.min.css">
+
+</head>
+
+<body class="theme-cyan font-montserrat">
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <h3 id="load_state" style="position: absolute;
+        top: 42%;
+        left: 44%;"></h3>
+        <div class="loader">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+
+        <nav class="navbar top-navbar">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </nav>
+
+
+        <div id="megamenu" class="megamenu particles_js">
+            <div id="particles-js"></div>
+        </div>
+
+        <div id="rightbar" class="rightbar">
+        </div>
+
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="navbar-brand">
+                <a href="index.html"><img src="./template/images/icon.svg" alt="Pod Park Logo"
+                        class="img-fluid logo"><span>Admin Page</span></a>
+                <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i
+                        class="lnr lnr-menu icon-close"></i></button>
+            </div>
+            <div class="sidebar-scroll">
+                <div class="user-account">
+                    <div class="user_div">
+                        <img src="./template/images/user.png" class="user-photo" alt="User Profile Picture">
+                    </div>
+                    <div class="dropdown">
+                        <span>Welcome,</span>
+                        <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"><strong>Admin User</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                            <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/logout"> <i class="icon-power"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav id="left-sidebar-nav" class="sidebar-nav">
+                    <ul id="main-menu" class="metismenu">
+                        <li class="header">Main</li>
+                        <li class="active open">
+                            <a href="#Project" class="has-arrow"><i class="icon-bubbles"></i><span>Dashboard</span></a>
+                            <ul>
+                                <li><a href="/admin">User List</a></li>
+                                <li class="active"><a href="/file_manager">File Manager</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div class="container-fluid">
+                <div class="block-header">
+                    <div class="row clearfix">
+                        <div class="col-md-6 col-sm-12">
+                            <h2 style="font-size: 18px;">File Upload</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="body">
+                                <form class="row" method="POST" action="/file_upload" enctype="multipart/form-data">
+                                    <div class="col-lg-1 col-md-1">
+                                        <p>Area Size</p>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="area_size"
+                                                placeholder="Area Size" value="20" name="areas">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1">
+                                        <p>Units</p>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="units" placeholder="Units"
+                                                name="units" value="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <p>Text 1</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="text1" placeholder="text 1"
+                                                name="text1" value="Add text1 for building.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <p>Text 2</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="text2" placeholder="text 2"
+                                                name="text2" value="Add text2 for building.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <a href="javascript:void(0);" id="upload_file_label"
+                                            class="btn btn-sm btn-success btn-block" title=""
+                                            onclick="choose_file()">File(Zip)</a>
+                                        <input type="file" class="form-control" id="upload_file" name="upload_file"
+                                            style="display: none;" onchange="selected_file(this)">
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <button class="btn btn-sm btn-primary btn-block" title="" id="submit_btn"
+                                            disabled>Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12" id="file-edit-fields" style="display: none;">
+                        <h2 style="font-size: 18px;">File Edit</h2>
+                        <div class="card">
+                            <div class="body">
+                                <h4 id="selected-file"></h4>
+                                <form class="row" method="POST" action="/file_upload" enctype="multipart/form-data">
+                                    <div class="col-lg-1 col-md-1">
+                                        <p>Area Size</p>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="update_area_size"
+                                                placeholder="Area Size" value="20" name="areas">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1">
+                                        <p>Units</p>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="update_units" placeholder="Units"
+                                                name="units" value="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <p>Text 1</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="update_text1" placeholder="text 1"
+                                                name="text1" value="Add text1 for building.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <p>Text 2</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="update_text2" placeholder="text 2"
+                                                name="text2" value="Add text2 for building.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-sm btn-success btn-block" title=""
+                                            onclick="update_file()">Update</a>
+                                      
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <a href="javascript:void(0);" 
+                                        class="btn btn-sm btn-danger btn-block" title=""
+                                        onclick="delete_file()">Delete</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-custom spacing8">
+                                <thead>
+                                    <tr>
+                                        <th>File ID</th>
+                                        <th>Area Size</th>
+                                        <th class="w100">Units</th>
+                                        <th class="">Text 1</th>
+                                        <th class="">Text 2</th>
+                                        <th>Status</th>
+                                        <th>Edit</th>
+                                        <th class="w100">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="file-list">
+                                    <tr>
+                                        <td><span>1231231232</span></td>
+                                        <td>
+                                            <h6 class="mb-0">20</h6>
+                                        </td>
+                                        <td><span>1</span></td>
+                                        <td>text 1</td>
+                                        <td>text 2</td>
+                                        <td><span class="badge badge-success">shown</span></td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="btn btn-success btn-round">Hide</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./template/libscripts.bundle.js"></script>
+    <script src="./template/vendorscripts.bundle.js"></script>
+    <script src="./template/mainscripts.bundle.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(() => {
+            // console.log("document loaded!")
+            $.get("/file_list", function (data) {
+                console.log("api data : ", data)
+                let user_items = ""
+                if (data.length > 0) {
+                    data.map(item => {
+                        var dateString = new Date(item.date * 1)
+                        dateString = dateString.toUTCString()
+                        user_items +=
+                            ` <tr>
+                                    <td><span>${item.id}</span></td>
+                                    <td><h6 class="mb-0">${item.area}</h6></td>
+                                    <td><span>${item.units}</span></td>  
+                                    <td><span>${item.text1}</span></td>  
+                                    <td><span>${item.text2}</span></td>  
+                                    <td><span class="badge badge-${item.state == 'shown' ? 'success' : 'danger'}">${item.state}</span></td>
+                                    <td style="padding: 0;">
+                                        <a href="javascript:void(0);" class="btn btn-warning btn-round" onclick="edit_file('${item.id}','${item.area}','${item.units}','${item.text1}','${item.text2}')">
+                                            Edit</a>
+                                    </td> 
+                                    <td style="padding: 0;">
+                                        <a href="javascript:void(0);" class="btn btn-${item.state != 'shown' ? 'success' : 'danger'} btn-round" onclick="block_file('${item.id}','${item.state != 'shown' ? 'shown' : 'hidden'}')">
+                                            ${item.state != 'shown' ? 'Show' : 'Hide'}</a>
+                                    </td>                           
+                                </tr>`
+                    })
+                }
+                $("#file-list").html(user_items)
+            });
+
+            $('#submit_btn').on('click', function (evt) {
+                evt.preventDefault();
+                var formData = new FormData();
+                var file = document.getElementById('upload_file').files[0];
+                formData.append('upload_file', file);
+                formData.append('areas', $("#area_size").val());
+                formData.append('units', $("#units").val());
+                formData.append('text1', $("#text1").val());
+                formData.append('text2', $("#text2").val());
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', '/file_upload', true);
+                xhr.timeout = 20000000;
+                $(".page-loader-wrapper").css("display", "block");
+
+                xhr.upload.onprogress = function (e) {
+                    if (e.lengthComputable) {
+                        var percentage = Math.round((e.loaded / e.total) * 10000)/100;
+                        $('#load_state').html(percentage + '% loading...')
+
+                    }
+                };
+
+                xhr.onerror = function (e) {
+                    console.log("file upload error ", e)
+                };
+
+                xhr.onload = function () {
+                    // showInfo(this.statusText);
+                    $(".page-loader-wrapper").css("display", "block")
+                    window.location.reload()
+                    console.log("file upload status ", this.statusText)
+                };
+
+                xhr.send(formData);
+            });
+        })
+
+        function block_file(id, state) {
+            $.post("/block_file", { id, state }, (res) => {
+                if (res.status == 'success') {
+                    location.reload()
+                }
+
+            })
+        }
+
+        function choose_file() {
+            $('#upload_file').trigger('click');
+        }
+
+        function selected_file(that) {
+            // console.log("file", $(that).files)
+            var file = document.getElementById('upload_file').files[0];
+            file = file.name.split(".")
+
+            if(file[file.length-1] !='zip'){
+                $('#submit_btn').attr('disabled', true)
+                return;
+            }
+
+            $('#upload_file_label').html("Selected");
+            $('#submit_btn').removeAttr('disabled')
+        }
+
+        function edit_file(id, area, units, text1, text2) {
+
+            $("#file-edit-fields").css("display", "block");
+            $("#update_area_size").val(area);
+            $("#update_units").val(units);
+            $("#update_text1").val(text1);
+            $("#update_text2").val(text2);
+            $("#selected-file").html(id);
+            
+        }
+
+
+        function update_file() {
+            let id = $("#selected-file").html()
+            if(!id)return;
+
+            var formData = new FormData();
+            formData.append('id', id);
+            formData.append('areas', $("#update_area_size").val());
+            formData.append('units', $("#update_units").val());
+            formData.append('text1', $("#update_text1").val());
+            formData.append('text2', $("#update_text2").val());
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/update_file', true);
+            xhr.timeout = 200000;
+
+            $(".page-loader-wrapper").css("display", "block");
+
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    var percentage = Math.round((e.loaded / e.total) * 10000)/100;
+                    // console.log("file upload percent : ", percentage + '%')
+                }
+            };
+            xhr.onerror = function (e) {
+                console.log("file upload error ", e)
+            };
+            xhr.onload = function () {
+                window.location.reload()
+            };
+            xhr.send(formData);            
+        }
+
+        function delete_file() {
+            let id = $("#selected-file").html()
+            if(!id)return;
+
+            var formData = new FormData();
+            formData.append('id', id);          
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/delete_file', true);
+            xhr.timeout = 200000;
+            $(".page-loader-wrapper").css("display", "block");
+
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    var percentage = (e.loaded / e.total) * 100;
+                    console.log("file upload percent : ", percentage + '%')
+                }
+            };
+
+            xhr.onerror = function (e) {
+                console.log("file upload error ", e)
+            };
+            xhr.onload = function () {
+                window.location.reload();
+                // $(".page-loader-wrapper").css("display", "block");
+            };
+            xhr.send(formData);       
+        }
+
+    </script>
+
+</body>
+
+</html>

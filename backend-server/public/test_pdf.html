@@ -1,0 +1,126 @@
+<html>
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+    </head>
+    <body style="margin: 0;" onload="loadFunction()">
+        
+	    <div style="width: 98%; height: 96%; padding: 1%; position: fixed; 
+        box-sizing: border-box;" id="pdf_content">
+
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+            </style>
+
+            <div style="
+                height: 100%;
+                border: 1px solid black;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-end;
+            ">
+
+                    <div style="font-size: 12px; font-weight: 400; margin-right: 12px;">
+                          <h3>User Name : ${window.sendData.name}</h3>
+                          <h3>Email : ${window.sendData.email}</h3>
+                          <h3>Company : ${window.sendData.company}</h3>
+                          <p>Phone Number: ${window.sendData.phone}</p>
+                    </div>
+
+                    <div style="width: 320px; border: 1px solid black; BORDER-TOP: 2px solid;border-right: none;
+                      border-bottom: none;
+                      border-left: 2px solid;">
+
+                      <div style="display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      align-items: center; 
+                      border-bottom: 2px solid;">
+
+                          <img src="./img/logo.png" style="width: 172px; margin-top: 14px;" />
+
+                          <h5 style="margin: 7px;
+                          text-align: center;
+                          font-size: 12px;">
+
+                          Devonshire House, 1 Mayfair Place, London, W1J 8AJ  </h5>
+                          <h5 style="margin: 0px;
+                          font-weight: 100; margin-bottom: 12px;">www.podpark.com | hello@podpark.com</h5>
+
+                      </div>
+
+                      <p style="border-bottom: 1px solid; margin: 0;padding: 7px;">&nbsp;Project: 11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i style="font-weight:800;">22 Lettable unit design</i style="font-weight:800;"></p>
+                      <div>
+                          <p style="margin: 6px;">Drawing Title: </p>
+                          <h2 style="text-align: center; margin-top: 2px;     margin-bottom: 12px;">${pageText[pageIndex-1]}</h2>
+                          <table style="font-size: 12px;
+                          width: 100%; text-align:center; " border="1">
+                              <tr>
+                                  <td >Drawn By:</td>
+                                  <td >DF</td>
+                                  <td >Scale:</td>
+                                  <td>NTS</td>
+                                  <td style="font-weight: 800;">Drawing no: </td>
+                                  <td style="font-weight: 800;">POD-22-3</td>
+                              </tr>
+                              <tr>
+                                  <td >Date:</td>
+                                  <td >2020</td>
+                                  <td >Page Size:</td>
+                                  <td>A4</td>
+                                  <td style="font-weight: 800;">Revision:</td>
+                                  <td style="font-weight: 800;">A</td>
+                              </tr>
+
+                          </table>
+                      </div>
+                </div>
+            </div>
+        </div> 
+
+	</body>
+
+    <script type="text/javascript">
+    
+        function loadFunction() {
+            return;
+            // var div = document.getElementById("pdf_div");
+            var div = document.createElement("div");
+            var body = document.getElementsByTagName("body")[0];
+            body.appendChild(div);
+
+            div.innerHTML = `<div style="width: 98%; height: 96%; padding: 1%; position: fixed; " id="pdf_content">
+                <div style="height: 100%; background: pink; border: 1px solid black; box-sizing: border-box; display: flex; justify-content: flex-end; align-items: flex-end;">
+                    <div style="width: 320px; height: 270px; border: 1px solid black;">
+                    </div>
+                </div>
+            </div>`;
+
+            html2canvas(document.getElementById("pdf_content"), {
+                onrendered: function (canvas) {
+                var image = canvas.toDataURL("image/png");
+
+                var pHtml =document.createElement("img");
+                pHtml.src = encodeURI(image);
+                body.appendChild(pHtml);
+                console.log("pdf rendered ", image);
+                div.innerHTML = "";
+                }
+            })
+
+         
+
+            
+        }
+
+
+		
+
+	</script>
+</html>

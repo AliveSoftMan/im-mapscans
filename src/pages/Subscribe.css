@@ -1,0 +1,81 @@
+.subscribe-input{
+  background-color: white;
+}
+
+.subscribe-input-style{
+  background-color: white;
+}
+
+.email-box{
+  width: 76%;
+  margin: auto;
+  margin-top: 2%;
+  display: flex;
+  justify-content: stretch;
+}
+
+
+#subscribe{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.email-box> input{
+  width: 80%;
+  border: none;
+  padding: 8px 21px;
+  box-shadow: 1px 3px 8px -2px #888888;
+  
+  height: 42px;
+  font-size: 18px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+
+
+}
+
+.email-box> input:focus{
+  outline: none;
+}
+.trusted-img{
+  max-height: 72px;
+  height: 4vw;
+  min-height: 36px;
+}
+
+.email-box button{
+  background-color: #5fd672;
+  color: white;
+  padding: 4px 21px;  
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 18px;
+  width: 20%;
+}
+
+.email-box button:hover{
+  background-color: rgba(95, 214, 114, 0.8);
+}
+
+@media screen and (max-width: 764px) {
+  .email-box button{
+    padding: 2px 12px;  
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 14px;
+    overflow: hidden;
+  }
+
+  .email-box> input{
+    font-size: 14px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 24px;
+    
+  }
+
+  .email-box{
+    min-width: 320px;
+  }
+
+}

@@ -1,0 +1,20 @@
+.drawerbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+.drawerbutton:focus {
+  outline: none;
+}
+.drawerbutton__line {
+  width: 30px;
+  height: 3px;
+  background: #555;
+}
