@@ -8,6 +8,7 @@ import { db } from '../firebase';
 import firebase from 'firebase';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
+import consts from '../consts.json'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,8 +55,7 @@ function Process(props) {
 
 		try {
 			await axios.post(
-				// 'http://localhost:8080/mapscans-react/us-central1/sendEmail',
-				'http://localhost:8080/email-send',
+				consts['endpoints']['send-email'],
 				{
 					params: {
 						email,

@@ -10,6 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import consts from '../consts.json'
+
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -68,7 +70,7 @@ function Subscribe({ id, openDialog }) {
 
 		try {
 			await axios.post(
-				'http://localhost:8080/email-send',
+        consts['endpoints']['send-email'],
 				{
 					params: {
 						email,
