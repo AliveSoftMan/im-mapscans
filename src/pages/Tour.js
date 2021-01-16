@@ -48,7 +48,7 @@ function Tour({ id }) {
                 <h1>Virtual Tours Sell Better!</h1>
                 <h5>
                   Much better than photos.
-                  </h5>
+                </h5>
                 <p>
                   Let buyers view your listings from the comfort of their home. Customers can get a better feel for a properties by making it feel as if they were actually there, something that photos alone can never provide.  Feature property highlights and sell your home faster.
                   </p>
