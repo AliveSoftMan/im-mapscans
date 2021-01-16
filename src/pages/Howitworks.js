@@ -48,9 +48,9 @@ function Process(id) {
 
               <Grid item xs={12} sm={4}>               
                 <Paper className={`${classes.paper} tour-item`}>
-                  <p style={{fontSize: 21, marginTop: 54, fontWeight: 600}}>Virtual Tours</p>
+                  <p style={{fontSize: 21, marginTop: 54, fontWeight: 600}}>Place your order</p>
                   <p style={{fontSize: 14, marginTop: 36}}>
-                  Experience the home as if you were actually there with one of our stunning 3D Tours.
+                  Send us an email to place your first order. Let us know what your schedule looks like.
                   </p>
                 </Paper>
               </Grid> 

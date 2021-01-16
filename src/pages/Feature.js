@@ -73,7 +73,7 @@ function Feature(id) {
         </Grid>
         <Grid item xs={12} sm={3}>
           <Paper className={`${classes.paper} tour-item`}>
-            <img style={{height: 72, marginTop: 16}} src={require('../imgs/3d Tour.svg')}/>
+            <img style={{height: 72, marginTop: 16}} src={require('../imgs/Floor Plan.svg')}/>
             <p style={{fontSize: 21, marginTop: 10, fontWeight: 600}}>Floor Plans</p>
             <p style={{fontSize: 14, marginTop: 6}}>
             Detailed, floor plans outlining dimensions and amenities help buyers understand the layout of a home.

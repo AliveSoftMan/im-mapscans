@@ -74,7 +74,8 @@ function Subscribe({ id, openDialog }) {
 				{
 					params: {
 						email,
-						subject: 'subscribe-update'
+            subject: 'subscribe-update',
+            template: 'emailTemplates'
 					}
 				}
 			).then(res=>{

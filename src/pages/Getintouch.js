@@ -63,7 +63,7 @@ function Process(props) {
 						name,
 						address,
 						message,
-						template: 'customerSignUpTemplate',
+						template: 'emailTemplates',
 						subject: 'get-in-touch'
 					}
 				}

@@ -2,7 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" />  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177790948-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-177790948-1');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],    
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K5KDBJK');</script>
+  <!-- End Google Tag Manager -->
+
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <link
     href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
@@ -12,23 +25,39 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>React App</title>
+  <title>Mapscans</title>
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5KDBJK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  
+  <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
-  <script type="text/javascript">
-    // var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    // (function () {
-    //   var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    //   s1.async = true;
-    //   s1.src = 'https://embed.tawk.to/5eb9b396967ae56c5218d6ea/default';
-    //   s1.charset = 'UTF-8';
-    //   s1.setAttribute('crossorigin', '*');
-    //   s0.parentNode.insertBefore(s1, s0);
-    // })();
-  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCq0o2-0FBqlQfs2KgJxiYpj-JiDw5Chfo",
+    authDomain: "fast-mapscans.firebaseapp.com",
+    databaseURL: "https://fast-mapscans.firebaseio.com",
+    projectId: "fast-mapscans",
+    storageBucket: "fast-mapscans.appspot.com",
+    messagingSenderId: "136160566329",
+    appId: "1:136160566329:web:a3578c4d5da967907141e8",
+    measurementId: "G-J386F93L0P"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 
 </html>

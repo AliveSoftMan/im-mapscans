@@ -43,7 +43,7 @@ function Header(props) {
         </div>
         <div className="header__content">
           <ul>
-            <li style={{ display: home ? "flex" : "none", color: location.pathname=='/'? 'lightgreen':'#1f0988' }}>
+            <li style={{ display: home ? "flex" : "none", color: location.pathname=='/'? 'grey':'#1f0988' }}>
               <Link
                 activeClass="active"
                 to="banner"
@@ -72,7 +72,7 @@ function Header(props) {
                 Home
             </li>
 
-            <li onClick={() => history.push("/pricing")} style={{color: location.pathname=='/pricing'? 'lightgreen':'#1f0988'}} >            
+            <li onClick={() => history.push("/pricing")} style={{color: location.pathname=='/pricing'? 'grey':'#1f0988'}} >            
                 Pricing
             </li>
 
@@ -88,7 +88,7 @@ function Header(props) {
                 How it works
               </Link>
             </li>
-            <li onClick={() => history.push("/scanner")} style={{color: location.pathname=='/scanner'? 'lightgreen':'#1f0988'}}>
+            <li onClick={() => history.push("/scanner")} style={{color: location.pathname=='/scanner'? 'grey':'#1f0988'}}>
               Become a scanner
             </li>
             <li style={{ display: home ? "flex" : "none" }}>

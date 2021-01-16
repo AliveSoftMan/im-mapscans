@@ -78,8 +78,8 @@ function Tour({ id }) {
 
             
               {/* <img style={{ width: '88%', marginLeft: '12%' }} src={require('../Images/tour-video.png')} /> */}
-              <video style={{ width: '94%', marginLeft: '6%', marginTop: '3%'}} autoPlay={true} controls >
-                <source src={require("../Images/homeVideo.mp4")} type="video/mp4" />
+              <video style={{ width: '94%', marginLeft: '6%', marginTop: '3%'}} autoPlay={true} controls={true} >
+                <source src="assets/homeVideo.mp4" type="video/mp4" />
               </video>
             </Grid>
           </Grid>

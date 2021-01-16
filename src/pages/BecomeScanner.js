@@ -60,7 +60,7 @@ function Process(props) {
 						name,
 						address,
 						message,
-						template: 'customerSignUpTemplate',
+						template: 'emailTemplates',
 						subject: 'become-scanner'
 					}
 				}
