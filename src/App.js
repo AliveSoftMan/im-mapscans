@@ -96,7 +96,7 @@ class App extends Component {
         <Router>
           <Header drawerClickHandler={this.drawerToggleCLickHandler} />
 
-          <SideDrawer show={this.state.sideDrawerOpen} />
+          <SideDrawer show={this.state.sideDrawerOpen}  closeSlider={this.backdropClickHandler} />
           {backDrop}
 
           <Switch>

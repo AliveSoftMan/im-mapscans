@@ -19,6 +19,8 @@ const fileUpload = require('express-fileupload')
 const capchaUrl = 'https://www.google.com/recaptcha/api/siteverify'
 const capchaSecret = '6LcAN9kZAAAAALzGouVb-hOizb51yHvmGLAVPs-5'
 const router = express.Router()
+const  {sendEmail}= require('./function.js')
+
 
 app.use(fileUpload({
         limits: {
@@ -199,6 +201,104 @@ app.use("/print_pdf", async (req, res)=>{
         res.redirect('/file_manager')
     }
 })
+
+
+app.use('/send-email', async (req, res)=>{
+    console.log("request : ", req.body)
+    let resData = {
+        status: "success",
+        data: req.body,
+        sent: {}
+    }
+    let reqParams = req.body.params
+    let content = ""
+    let subject = ""
+
+
+    // if(reqParams.subject == 'order-now' || reqParams.subject == 'get-in-touch'){
+    //     subject = `${reqParams.name} has sent a direct message to Mapscans!`
+        
+    //     content = `<div>
+    //         <p>
+    //             ${reqParams.message}        
+    //         </p>
+
+    //         <h5>
+    //             Customer Information
+    //         </h5>
+            
+    //         <table>
+    //             <tbody>
+    //                 <tr>
+    //                     <td  align="center">Name</td>
+    //                     <td  align="center">Email</td>
+    //                     <td  align="center">Phone</td>
+    //                     <td  align="center">Address</td>
+    //                 </tr>
+
+    //                 <tr>
+    //                     <td  align="center">${reqParams.name}</td>
+    //                     <td  align="center">${reqParams.email}</td>
+    //                     <td  align="center">${reqParams.phone}</td>
+    //                     <td  align="center">${reqParams.address}</td>
+    //                 </tr>
+    //             </tbody>
+    //         </table>
+    //     </div>`
+
+    // }else if(reqParams.subject == 'become-scanner'){
+    //     subject = `${reqParams.name} wants to enroll as a scanner Mapscans!`
+        
+    //     content = `<div>
+    //         <p>
+    //             ${reqParams.message}        
+    //         </p>
+
+    //         <h5>
+    //             Customer Information
+    //         </h5>
+            
+    //         <table>
+    //             <tbody>
+    //                 <tr>
+    //                     <td  align="center">Name</td>
+    //                     <td  align="center">Email</td>
+    //                     <td  align="center">Phone</td>
+    //                     <td  align="center">Address</td>
+    //                 </tr>
+
+    //                 <tr>
+    //                     <td  align="center">${reqParams.name}</td>
+    //                     <td  align="center">${reqParams.email}</td>
+    //                     <td  align="center">${reqParams.phone}</td>
+    //                     <td  align="center">${reqParams.address}</td>
+    //                 </tr>
+    //             </tbody>
+    //         </table>
+    //     </div>`
+    // }else if(reqParams.subject == "subscribe-update"){
+    //     subject = `${reqParams.email} has subscribed to updates.`
+    //     content = `<h4>${subject}</h4>`
+    // }
+
+    // let mailInfo = `<div><h4>User Email: ${req.body['email']}</h4><h4>User Name: ${req.body['name']} / Address: ${req.body['address']}</h4><p>`     
+    // mailInfo += req.body.message + `</p><div>`
+    
+    var mailData = {
+        to: "support@mapscans.com",
+        subject, content
+    }
+
+    // await mailService(mailData, (result)=>{
+    //     console.log("result", result)
+    //     resData['sent'] = result
+    // })
+
+    // res.send(resData)
+    sendEmail(req, res)
+})
+
+
 
 console.log("started server on :", 8080)
 app.listen(8080);

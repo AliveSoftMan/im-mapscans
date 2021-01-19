@@ -5,6 +5,7 @@ import { db } from '../firebase';
 import firebase from 'firebase';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
+import consts from '../consts.json'
 
 const Contact = (id) => {
 	
@@ -41,7 +42,8 @@ const Contact = (id) => {
 			});
 		try {
 			await axios.get(
-				'http://localhost:5001/mapscans-react/us-central1/sendEmail',
+				// 'http://localhost:5001/mapscans-react/us-central1/sendEmail',
+				consts['endpoints']['send-email'],
 				{
 					params: {
 						email,

@@ -37,7 +37,8 @@ const ScannerForm = () => {
 			});
 		try {
 			await axios.get(
-				'http://localhost:5001/mapscans-react/us-central1/sendEmail',
+				// 'http://localhost:5001/mapscans-react/us-central1/sendEmail',
+				consts['endpoints']['send-email'],
 				{
 					params: {
 						email,

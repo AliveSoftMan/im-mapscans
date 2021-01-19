@@ -4,6 +4,8 @@ import "./TourCard";
 
 import { Button } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -45,19 +47,27 @@ function Tour({ id }) {
           <Grid container spacing={5} justify="space-between">
             <Grid item xs={12} sm={6}>
               <div className="tour__headerContent">
+
                 <h1>Virtual Tours Sell Better!</h1>
+
                 <h5>
                   Much better than photos.
                 </h5>
+
                 <p>
-                  Let buyers view your listings from the comfort of their home. Customers can get a better feel for a properties by making it feel as if they were actually there, something that photos alone can never provide.  Feature property highlights and sell your home faster.
-                  </p>
+                  Let buyers view your listings from the comfort of their home. Customers can get a better feel for a properties by making it feel as if they were actually there, 
+                  something that photos alone can never provide.  Feature property highlights and sell your home faster.
+                </p>
+
                 <h5>
                   Sell faster.
-                  </h5>
+                </h5>
+
                 <p>
-                  Showing off your listings has never been easier. Consistent, high-definition 3D tours are proven to deliver significantly better results while selling your property.  Have an Open House 24/7 with virtual reality integration!
-                  </p>
+                  Showing off your listings has never been easier. Consistent, high-definition 3D tours are proven to deliver significantly 
+                  better results while selling your property.  Have an Open House 24/7 with virtual reality integration!
+                </p>
+
                 <Link
                   to="pricing?scroll=bottom">
                   <Button>
@@ -68,15 +78,12 @@ function Tour({ id }) {
             </Grid>
             <Grid item xs={12} sm={6}>
               <div className="tour__headerContent" style={{display: 'flex', justifyContent: 'flex-end', width: '100%', margin: 0, width: '94%',  marginLeft: "6%"}}>
-                <Link to="3dtour">
+                {/* <Link to="3dtour">
                   <Button>
                     Explore more
                   </Button>
-                </Link>
-
-              </div>
-
-            
+                </Link> */}
+              </div>            
               {/* <img style={{ width: '88%', marginLeft: '12%' }} src={require('../Images/tour-video.png')} /> */}
               <video style={{ width: '94%', marginLeft: '6%', marginTop: '3%'}} autoPlay={true} controls={true} >
                 <source src="assets/homeVideo.mp4" type="video/mp4" />
@@ -109,12 +116,18 @@ function Tour({ id }) {
                 <p>
                   Video walkthroughs are a perfect tool to showcase your home in listing sites, websites, as well as social media.
                 </p>
-                <Link
-                  to="pricing?scroll=bottom">
+                <ScrollLink
+                   activeClass="active"
+                   to="getin-touch"
+                   spy={true}
+                   smooth={true}
+                   offset={-70}
+                   duration={500}
+                  >
                   <Button className="learn-more-btn" >
                     Learn More
                   </Button>
-                </Link>
+                </ScrollLink>
               </div>
             </Grid>
           </Grid>
@@ -144,13 +157,22 @@ function Tour({ id }) {
                 <p>
                   Three sets of photos delivered with every order!
                 </p>
-                <Link
-                  to="pricing?scroll=bottom">
+
+                <ScrollLink
+                   activeClass="active"
+                   to="getin-touch"
+                   spy={true}
+                   smooth={true}
+                   offset={-70}
+                   duration={500}
+                  >
                   <Button>
                     Learn More
                   </Button>
-                </Link>
+                </ScrollLink>
+
               </div>
+
             </Grid>
             <Grid item xs={12} sm={7}>
               <div className="bar-slide-div">
@@ -186,12 +208,7 @@ function Tour({ id }) {
                 <p>
                   Buyers can understand how the home may work for them with the complete floor plan layout and home measurements. Paired with real estate photography, floor plans provide a better comprehension of the property for viewers!
                 </p>
-                <Link
-                  to="pricing?scroll=bottom">
-                  <Button className="learn-more-btn" >
-                    See More
-                  </Button>
-                </Link>
+               
               </div>
             </Grid>
           </Grid>

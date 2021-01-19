@@ -57,6 +57,12 @@
   background-color: rgba(95, 214, 114, 0.8);
 }
 
+@media screen and (max-width: 920px) {
+  .email-box{
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 764px) {
   .email-box button{
     padding: 2px 12px;  
@@ -64,6 +70,7 @@
     border-bottom-right-radius: 6px;
     font-size: 14px;
     overflow: hidden;
+    width: 36%;
   }
 
   .email-box> input{
@@ -71,6 +78,7 @@
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     height: 24px;
+    width: 64%;
     
   }
 

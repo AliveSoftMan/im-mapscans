@@ -1,32 +1,53 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./SideDrawer.css";
-import { Link, animateScroll as scroll } from "react-scroll";
-import { useHistory } from "react-router-dom";
+import { Link as ScrollLink} from "react-scroll";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 const SideDrawer = (props) => {
-  const history = useHistory();
+
   let drawerClasses = "sidedrawer__nav";
   if (props.show) {
     drawerClasses = "sidedrawer__nav open";
   }
+
+  const location = useLocation();
+
+  const [home, setHome] = useState(true);
+
+  useEffect(() => {
+    if (
+      location.pathname === "/scanner" ||
+      location.pathname === "/3dtour" ||
+      location.pathname === "/videotour" ||
+      location.pathname === "/terms&conditions" ||
+      location.pathname === "/privacypolicy"||
+      location.pathname === "/pricing"
+    ) {
+      setHome(false);
+    } else {
+      setHome(true);
+    }
+  }, [location]);
+
+
   return (
-    <div className="sidedrawer">
+    <div className="sidedrawer">      
       <nav className={drawerClasses}>
         <ul>
           <li>
+            <div className="exit-div">
+              <img src={require('../imgs/icon/exit-icon.png')} onClick={props.closeSlider}/>
+            </div>
+          </li>
+          {!home && <li>
             <Link
-              activeClass="active"
-              to="banner"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              to="/"
             >
               Home
             </Link>
-          </li>
-          <li>
-            <Link
+          </li>}
+          {home &&<li>
+            <ScrollLink
               activeClass="active"
               to="feature"
               spy={true}
@@ -35,51 +56,46 @@ const SideDrawer = (props) => {
               duration={500}
             >
               Services
-            </Link>
-          </li>
+            </ScrollLink>
+          </li>}
           <li>
             <Link
-              activeClass="active"
-              to="tour"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              to="/pricing"
             >
               Pricing
             </Link>
           </li>
-
-          <li>
-            <Link
+          {home &&<li>
+            <ScrollLink
               activeClass="active"
-              to="process"
+              to="how-it-work"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
               How it works
-            </Link>
-          </li>
-          <div onClick={() => history.push("/scanner")}>
-            {" "}
-            <li>Become a scanner</li>
-          </div>
+            </ScrollLink>
+          </li>}
           <li>
             <Link
+              to="/scanner"
+            >
+              Become a Scanner
+            </Link>
+          </li>
+          {home &&<li>
+            <ScrollLink
               activeClass="active"
-              to="contact"
+              to="getin-touch"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
-
               Contact us
-
-            </Link>
-          </li>
+            </ScrollLink>
+          </li>}
         </ul>
       </nav>
     </div>

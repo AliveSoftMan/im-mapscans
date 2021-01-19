@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./Header.css";
-import logo from "../imgs/Logo.svg";
-import DrawerButton from "./DrawerButton";
-
-import { Link, animateScroll as scroll } from "react-scroll";
-import { useHistory, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react"
+import "./Header.css"
+import logo from "../imgs/Logo.svg"
+import DrawerButton from "./DrawerButton"
+import { Link, animateScroll as scroll } from "react-scroll"
+import { useHistory, useLocation } from "react-router-dom"
 
 function Header(props) {
   const location = useLocation();
@@ -20,7 +19,6 @@ function Header(props) {
       location.pathname === "/terms&conditions" ||
       location.pathname === "/privacypolicy"||
       location.pathname === "/pricing"
-
     ) {
       setHome(false);
       let scrollVar = location.search
@@ -31,7 +29,15 @@ function Header(props) {
     } else {
       setHome(true);
     }
+
+    var inputClasses = document.getElementsByTagName('input');
+    var length = inputClasses.length;
+    for (var i = 0; i < length; i++) {
+      inputClasses[i].className = inputClasses[i].className + " gtag-class";
+    }
+
   }, [location]);
+
   return (
     <div className="header">
       <div className="header__drawer">

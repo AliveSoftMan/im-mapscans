@@ -19,3 +19,9 @@
   font-family: PoppinsMedium;
 }
 
+.app{
+  overflow-x: hidden;
+}
+.footer>ul>li{
+  cursor: pointer;
+}
