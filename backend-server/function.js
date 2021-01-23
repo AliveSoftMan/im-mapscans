@@ -1,9 +1,9 @@
 /* eslint-disable no-throw-literal */
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+// const functions = require('firebase-functions');
+// const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
-const cors = require('cors')({ origin: true });
-admin.initializeApp();
+// const cors = require('cors')({ origin: true });
+// admin.initializeApp();
 
 let transporter = nodemailer.createTransport({
 	pool: true,
