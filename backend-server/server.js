@@ -45,26 +45,26 @@ app.get('/', (req, res, next)=>{
 
 app.use('/',(req, res, next)=>{
     next()
-}, express.static('public'))
+}, express.static('../build'))
 
 
-app.use('/login',  (req, res)=>{
-    res.sendFile(path.join(__dirname , '/public/index.html'))
-})
+// app.use('/login',  (req, res)=>{
+//     res.sendFile(path.join(__dirname , '/public/index.html'))
+// })
 
 
-app.use('/register', (req, res)=>{
-    res.sendFile(path.join(__dirname , '/public/register.html'))
-})
+// app.use('/register', (req, res)=>{
+//     res.sendFile(path.join(__dirname , '/public/register.html'))
+// })
 
-app.use('/main', auth,  (req, res)=>{
-    res.sendFile(path.join(__dirname , '/public/main.html'))
-})
+// app.use('/main', auth,  (req, res)=>{
+//     res.sendFile(path.join(__dirname , '/public/main.html'))
+// })
 
-app.use('/logout', (req, res)=>{
-    req.session.destroy()
-    res.redirect('/login')
-})
+// app.use('/logout', (req, res)=>{
+//     req.session.destroy()
+//     res.redirect('/login')
+// })
 
 app.use('/email-send', async (req, res)=>{
     console.log("request : ", req.body)
