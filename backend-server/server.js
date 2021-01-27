@@ -47,6 +47,34 @@ app.use('/',(req, res, next)=>{
     next()
 }, express.static('../build'))
 
+app.use('/pricing',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+
+app.use('/scanner',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+
+app.use('/videotour',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+app.use('/3dtour',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+
+app.use('/terms&conditions',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+
+app.use('/privacypolicy',(req, res, next)=>{
+    next()
+}, express.static('../build'))
+
+
+
+
+
+
 
 // app.use('/login',  (req, res)=>{
 //     res.sendFile(path.join(__dirname , '/public/index.html'))
