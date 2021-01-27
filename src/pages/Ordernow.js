@@ -57,9 +57,9 @@ function Process(props) {
 		window.dataLayer.push({
 			event: 'event',
 			eventProps: {
-				category: "user-action",
-				action: "email-action",
-				label: "submit",
+				category: "form",
+				action: "submit",
+				label: "ordernow",
 				value: "order-now"
 			}
 		  });

@@ -43,9 +43,9 @@ const Contact = (id) => {
 		window.dataLayer.push({
 			event: 'event',
 			eventProps: {
-				category: "user-action",
-				action: "email-action",
-				label: "submit",
+				category: "form",
+				action: "submit",
+				label: "contact",
 				value: "get-in-touch"
 			}
 		});
