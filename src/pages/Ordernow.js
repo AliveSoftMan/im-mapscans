@@ -53,8 +53,20 @@ function Process(props) {
 		if(!validateEmail() || !validatePhone() ){
 			return
 		}
+		
+		window.dataLayer.push({
+			event: 'event',
+			eventProps: {
+				category: "user-action",
+				action: "email-action",
+				label: "submit",
+				value: "order-now"
+			}
+		  });
+		  console.log("order now event")
+
 		try {
-			await axios.get(
+			await axios.post(
 				// 'http://localhost:5001/mapscans-react/us-central1/sendEmail',
 				consts['endpoints']['send-email'],
 				{
@@ -73,7 +85,7 @@ function Process(props) {
 				if(res.data.status=="success"){
 					props.openDialog({up :"Thank you for your interest!", down: "We will get back to you soon- Stay Tuned!"})
 				}else{
-
+					props.openDialog({up :"Sorry! Unknown Error.", down: "You could not send your request."})
 				}
 			})
 		} catch (error) {

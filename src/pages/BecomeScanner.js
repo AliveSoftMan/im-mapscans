@@ -49,6 +49,17 @@ function Process(props) {
 			return
 		}
 
+		window.dataLayer.push({
+			event: 'event',
+			eventProps: {
+				category: "user-action",
+				action: "email-action",
+				label: "submit",
+				value: "become-scanner"
+			}
+		});
+	
+
 		try {
 			await axios.post(
 				// 'http://localhost:8080/mapscans-react/us-central1/sendEmail',
@@ -69,6 +80,7 @@ function Process(props) {
 				if(res.data.status=="success"){
 					props.openDialog({up :"Thank you for your interest in becoming a scanner!", down: "We will get back to you soon- Stay Tuned!"})
 				}else{
+					props.openDialog({up :"Sorry! Unknown Error.", down: "You could not send your request."})
 				}
 			})
 
@@ -85,7 +97,7 @@ function Process(props) {
 	const validatePhone = () => {
 		var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
 		return phoneNumberPattern.test(phone)
-  }  
+  }
 
   return (
     <div className="getintouch" id={props.id}>   

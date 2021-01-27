@@ -47,27 +47,21 @@ function Tour({ id }) {
           <Grid container spacing={5} justify="space-between">
             <Grid item xs={12} sm={6}>
               <div className="tour__headerContent">
-
                 <h1>Virtual Tours Sell Better!</h1>
-
                 <h5>
                   Much better than photos.
                 </h5>
-
                 <p>
                   Let buyers view your listings from the comfort of their home. Customers can get a better feel for a properties by making it feel as if they were actually there, 
                   something that photos alone can never provide.  Feature property highlights and sell your home faster.
                 </p>
-
                 <h5>
                   Sell faster.
                 </h5>
-
                 <p>
                   Showing off your listings has never been easier. Consistent, high-definition 3D tours are proven to deliver significantly 
                   better results while selling your property.  Have an Open House 24/7 with virtual reality integration!
                 </p>
-
                 <Link
                   to="pricing?scroll=bottom">
                   <Button>
@@ -157,7 +151,6 @@ function Tour({ id }) {
                 <p>
                   Three sets of photos delivered with every order!
                 </p>
-
                 <ScrollLink
                    activeClass="active"
                    to="getin-touch"
@@ -170,9 +163,7 @@ function Tour({ id }) {
                     Learn More
                   </Button>
                 </ScrollLink>
-
               </div>
-
             </Grid>
             <Grid item xs={12} sm={7}>
               <div className="bar-slide-div">
@@ -207,8 +198,7 @@ function Tour({ id }) {
                 </h5>
                 <p>
                   Buyers can understand how the home may work for them with the complete floor plan layout and home measurements. Paired with real estate photography, floor plans provide a better comprehension of the property for viewers!
-                </p>
-               
+                </p>               
               </div>
             </Grid>
           </Grid>

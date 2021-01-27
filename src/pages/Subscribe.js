@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Subscribe({ id, openDialog }) {
-  const history = useHistory()
   const classes = useStyles()
   const [email, setEmail] = useState('')
   const [emailError, setError] = useState(false)
@@ -49,10 +48,9 @@ function Subscribe({ id, openDialog }) {
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
-      return;
+      return
     }
-
-    setError(false);
+    setError(false)
   };
   
   
@@ -69,6 +67,17 @@ function Subscribe({ id, openDialog }) {
     console.log("submit email")
 
 		try {
+
+      window.dataLayer.push({
+        event: 'event',
+        eventProps: {
+            category: "user-action",
+            action: "email-action",
+            label: "submit",
+            value: "subscribe-update"
+        }
+      });
+
 			await axios.post(
         consts['endpoints']['send-email'],
 				{
@@ -79,10 +88,11 @@ function Subscribe({ id, openDialog }) {
 					}
 				}
 			).then(res=>{
-				console.log("email send : ", res)
+        console.log("res : ", res)
 				if(res.data.status=="success"){
 					openDialog({up :"Thank you for subscribing to our newsletter!", down: "We will get back to you soon- Stay Tuned!"})
 				}else{
+          openDialog({up :"Sorry! Unknown Error.", down: "You could not send your subscription."})
 				}
 			})
 
@@ -100,18 +110,16 @@ function Subscribe({ id, openDialog }) {
 
   return (
     <div>
-
       <Snackbar open={emailError} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
         Please provide a valid email address.
         </Alert>
       </Snackbar>
 
-
       <div className="tour bg-blue" id={id}>
         <div className={classes.root}>
             <h2>
-            Subscribe to our newsletter & get the latest news and updates
+              Subscribe to our newsletter & get the latest news and updates
             </h2>
             <div className="email-box">
               <input type="text" placeholder="Enter your email" onChange={handleChange}>
@@ -119,7 +127,6 @@ function Subscribe({ id, openDialog }) {
               <Button onClick={handleSubmit}>
                 Subscribe
               </Button>
-
             </div>
           </div>
       </div>
@@ -127,8 +134,8 @@ function Subscribe({ id, openDialog }) {
       <div className="tour bg-white" id={id}>
         <div className={classes.root}>
         <h1>
-       Our Happy Users
-            </h1>
+        Our Happy Users
+        </h1>
           
         <Grid container spacing={5} justify="space-between" style={{marginTop: 21}}>
 

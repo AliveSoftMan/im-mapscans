@@ -1,6 +1,6 @@
 {
     "endpoints":{
-        "send-email": "https://us-central1-fast-mapscans.cloudfunctions.net/sendEmail"
+        "send-email": "http://localhost:8080/send-email"
     }
     
 }

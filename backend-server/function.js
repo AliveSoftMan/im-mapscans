@@ -20,6 +20,7 @@ let transporter = nodemailer.createTransport({
 });
 
 const from = 'Mapscans <support@mapscans.com>';
+// const from = 'support@mapscans.com';
 
 const customerSignUpTemplate = ({ email, name }) => {
 	if (!email || !name) {
@@ -77,7 +78,7 @@ const scannerSignUpTemplate = ({ email }) => {
 				<p>The MapScans Team</p>`,
 			},
 			'newScannerMessage',
-		];
+		]
 	}
 };
 
@@ -108,10 +109,27 @@ const newCustomerMessage = ({ email, name, phone, address, message }) => {
 						<td>${phone}</td>
 						<td>${address}</td>
 					</tr>
-				</table>`,
-		};
+				</table>`
+		}
 	}
 };
+
+
+const newSubscriptMessage = ({ email}) => {
+	if (!email) {
+
+		throw 'Invoked with invalid params';
+	} else {
+		return {
+			from: from,
+			to: email,
+			subject: `Your subscription has been updated successfully.`,
+			html: `<h3>Congratulations!</h3>
+				<p>We will get back to you soon. Thanks</p>`
+		}
+	}
+};
+
 
 const newScannerMessage = ({ email, name, phone, address }) => {
 	if (!email || !name || !phone || !address) {
@@ -138,29 +156,25 @@ const newScannerMessage = ({ email, name, phone, address }) => {
 						<td>${phone}</td>
 						<td>${address}</td>
 					</tr>
-				</table>`,
+				</table>`
 		};
 	}
 };
 
-
+ 
 const emailTemplates = ({ email, name, phone, address, message, subject}) => {
-
-
 	let content = ""
-    let subjectTxt = ""
-
+	let subjectTxt = ""
+	let returnTemp = "newCustomerMessage"
     if(subject === 'order-now' || subject === 'get-in-touch'){
         subjectTxt = `${name} has sent a direct message to Mapscans!`        
         content = `<div>
             <p>
                 ${message}        
             </p>
-
             <h5>
                 Customer Information
-            </h5>
-            
+            </h5>            
             <table>
                 <tbody>
                     <tr>
@@ -169,7 +183,6 @@ const emailTemplates = ({ email, name, phone, address, message, subject}) => {
                         <td  align="center">Phone</td>
                         <td  align="center">Address</td>
                     </tr>
-
                     <tr>
                         <td  align="center">${name}</td>
                         <td  align="center">${email}</td>
@@ -186,11 +199,9 @@ const emailTemplates = ({ email, name, phone, address, message, subject}) => {
             <p>
                 ${message}        
             </p>
-
             <h5>
                 Customer Information
-            </h5>
-            
+            </h5>            
             <table>
                 <tbody>
                     <tr>
@@ -199,7 +210,6 @@ const emailTemplates = ({ email, name, phone, address, message, subject}) => {
                         <td  align="center">Phone</td>
                         <td  align="center">Address</td>
                     </tr>
-
                     <tr>
                         <td  align="center">${name}</td>
                         <td  align="center">${email}</td>
@@ -211,19 +221,17 @@ const emailTemplates = ({ email, name, phone, address, message, subject}) => {
         </div>`
     }else if(subject === "subscribe-update"){
         subjectTxt = `${email} has subscribed to updates.`
-        content = `<h4>${subject}</h4>`
-    }
-
-    
+		content = `<h4>${subject}</h4>`
+		returnTemp = "newSubscriptMessage"		
+    }    
     var mailData = {
-		to: "support@mapscans.com",
+		// to: "support@mapscans.com",
+		to: "alivesoftsnowman@gmail.com",
 		from: "andrew@mapscans.com",
 		subject: subjectTxt, 
 		html: content
-	}
-	
-	return mailData
-
+	}	
+	return [mailData, returnTemp]
 };
 
 
@@ -231,50 +239,55 @@ const templates = {
 	customerSignUpTemplate,
 	scannerSignUpTemplate,
 	newCustomerMessage,
+	newSubscriptMessage,
 	newScannerMessage,
 	emailTemplates
 };
 
 exports.sendEmail = (req, res) => {
-	cors(req, res, () => {
-		const { email, template, ...rest } = req.body;
-		if (!templates[template]) {
-			return res
-				.json({ error: 'Invoked with unknown template!' })
-				.status(422);
-		} else {
-			try {
-				const [mailOptions, callbackTemplate] = templates[template]({
-					email,
-					...rest,
-				});
-				return transporter.sendMail(mailOptions, (error, info) => {
-					if (error) {
-						return res.json({ error }).status(422);
-					}
-					if (callbackTemplate) {
-						const callbackOptions = templates[callbackTemplate]({
-							email,
-							...rest,
-						});
-						return transporter.sendMail(
-							callbackOptions,
-							(error, info) => {
-								if (error) {
-									return res.json({ error }).status(422);
-								}
-								return res.json({ success: true });
+	const { email, template, ...rest } = req.body.params;
+	console.log("email , template : ", email, template)
+	if (!templates[template]) {
+		return res
+			.json({ error: 'Invoked with unknown template!' })
+			.status(422);
+	} else {
+		try {
+			const [mailOptions, callbackTemplate] = templates[template]({
+				email,
+				...rest,
+			});
+			// console.log("mail options : ", mailOptions, callbackTemplate)
+			transporter.sendMail(mailOptions, (error, info) => {
+				console.log("error : ", error)
+				console.log("info : ", info)
+				console.log("callbackTemplate : ", callbackTemplate)
+				// return res.json({ success: true, status: "success"});
+				if (error) {
+					return res.json({ error }).status(422);
+				}else if (callbackTemplate) {
+					const callbackOptions = templates[callbackTemplate]({
+						email,
+						...rest,
+					});
+					transporter.sendMail(
+						callbackOptions,
+						(error, info) => {
+							if (error) {
+								return res.json({ error, status: "fail"  }).status(422);
 							}
-						);
-					} else {
-						return res.json({ success: true });
-					}
-				});
-			} catch (error) {
-				return res.json({ error }).status(422);
-			}
-        }
-    })
+							return res.json({ success: true, status: "success" });
+						}
+					);
+				} else {
+					console.log("nothing: success")
+					return res.json({ success: true, status: "success"});
+				}
+			});
+		} catch (error) {
+			return res.json({ error, status: "fail" }).status(422);
+		}
+	}
 }
 
 

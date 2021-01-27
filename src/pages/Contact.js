@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import axios from 'axios';
-import { db } from '../firebase';
 import firebase from 'firebase';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
@@ -25,21 +24,32 @@ const Contact = (id) => {
 			message,
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 		};
-		db.collection('customerLeads')
-			.add(data)
-			.then(() => {
-				setName('');
-				setEmail('');
-				setPhone('');
-				setAddress('');
-				setMessage('');
-				alert(
-					'Thank you for your interest. Our team will get in touch with you soon. We look forward to making great things together! 🚀'
-				);
-			})
-			.catch((error) => {
-				alert(error.message);
-			});
+		// db.collection('customerLeads')
+		// 	.add(data)
+		// 	.then(() => {
+		// 		setName('');
+		// 		setEmail('');
+		// 		setPhone('');
+		// 		setAddress('');
+		// 		setMessage('');
+		// 		alert(
+		// 			'Thank you for your interest. Our team will get in touch with you soon. We look forward to making great things together! 🚀'
+		// 		);
+		// 	})
+		// 	.catch((error) => {
+		// 		alert(error.message);
+		// 	});
+		
+		window.dataLayer.push({
+			event: 'event',
+			eventProps: {
+				category: "user-action",
+				action: "email-action",
+				label: "submit",
+				value: "get-in-touch"
+			}
+		});
+
 		try {
 			await axios.get(
 				// 'http://localhost:5001/mapscans-react/us-central1/sendEmail',
@@ -54,7 +64,16 @@ const Contact = (id) => {
 						template: 'customerSignUpTemplate',
 					},
 				}
-			);
+			).then(res=>{
+				console.log("email send : ", res)
+				if(res.data.status=="success"){
+					props.openDialog({up :"Thank you for your interest!", down: "We will get back to you soon- Stay Tuned!"})
+				}else{
+					openDialog({up :"Sorry! Unknown Error.", down: "You could not send your subscription."})
+				}
+
+			
+			})
 		} catch (error) {
 			console.log(error);
 		}

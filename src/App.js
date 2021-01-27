@@ -91,6 +91,7 @@ class App extends Component {
     if (this.state.sideDrawerOpen) {
       backDrop = <Backdrop click={this.backdropClickHandler} />;
     }
+
     return (
       <div className="app">
         <Router>

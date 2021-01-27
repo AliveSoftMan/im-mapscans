@@ -4,6 +4,12 @@ import logo from "../imgs/Logo.svg"
 import DrawerButton from "./DrawerButton"
 import { Link, animateScroll as scroll } from "react-scroll"
 import { useHistory, useLocation } from "react-router-dom"
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-K5KDBJK'
+}
+TagManager.initialize(tagManagerArgs)
 
 function Header(props) {
   const location = useLocation();
@@ -12,6 +18,15 @@ function Header(props) {
   const [home, setHome] = useState(true);
 
   useEffect(() => {
+
+    window.dataLayer.push({
+      event: 'pageview',
+      page: {
+        url: location,
+        title: location.pathname.substr(1, location.pathname.length)
+      }
+    });
+
     if (
       location.pathname === "/scanner" ||
       location.pathname === "/3dtour" ||
