@@ -1,6 +1,6 @@
 {
     "endpoints":{
-        "send-email": "http://localhost:8080/send-email"
+        "send-email": "/send-email"
     }
     
 }

@@ -225,8 +225,7 @@ const emailTemplates = ({ email, name, phone, address, message, subject}) => {
 		returnTemp = "newSubscriptMessage"		
     }    
     var mailData = {
-		// to: "support@mapscans.com",
-		to: "alivesoftsnowman@gmail.com",
+		to: "support@mapscans.com",
 		from: "andrew@mapscans.com",
 		subject: subjectTxt, 
 		html: content
