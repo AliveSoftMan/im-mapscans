@@ -129,7 +129,7 @@ function PriceComp(id) {
               <td>Call For Price</td>
             </tr>
             <tr>
-              <td>Property Preports</td>
+              <td>Property Page</td>
               <td align="center"><b>+ $9.95*</b>&nbsp;USD<br></br><span>(Discounted from $19.95 for a limited time only!)</span>
               </td>
               <td align="center"><b>+ $9.95*</b>&nbsp;USD<br></br><span>(Discounted from $19.95 for a limited time only!)</span>
