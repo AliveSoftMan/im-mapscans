@@ -41,10 +41,10 @@ const Contact = (id) => {
 		// 	});
 		
 		window.dataLayer.push({
-			event: 'event',
+			event: 'submit-event',
 			eventProps: {
-				category: "form",
-				action: "submit",
+				category: "Category",
+				action: "Action",
 				label: "contact",
 				value: "get-in-touch"
 			}

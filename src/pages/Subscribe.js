@@ -69,12 +69,12 @@ function Subscribe({ id, openDialog }) {
 		try {
 
       window.dataLayer.push({
-        event: 'event',
+        event: 'submit-event',
         eventProps: {
-            category: "form",
-            action: "submit",
+            category: "Category",
+            action: "Action",
             label: "ordernow",
-            value: "subscribe-update"
+            value: "subscribe"
         }
       });
 
