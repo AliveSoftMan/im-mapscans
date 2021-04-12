@@ -31,7 +31,7 @@ function PriceComp(id) {
   return (
     <div className="price-comp">      
       <div className={classes.banner}>
-        <img alt="image"  src={require('../imgs/Pricing Banner.png')} className={classes.bannerImg} />
+        <img alt="image"  src={require('../imgs/Pricing Banner.jpg')} className={classes.bannerImg} />
         <h1>Pricing</h1>
         <h3>
           Select one of the pricing packages based on your property size

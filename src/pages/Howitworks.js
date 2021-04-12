@@ -39,7 +39,7 @@ function Process(id) {
         <Grid container spacing={0} justify="space-between">
 
           <Grid item xs={12} sm={4} style={{display: 'flex'}}>
-          <img style={{width: '100%'}} src={require('../imgs/how-it-works.png')}/>
+          <img style={{width: '100%'}} src={require('../imgs/how-it-works.jpg')}/>
           </Grid>
 
           <Grid item xs={12} sm={8} className="card-items">

@@ -44,7 +44,7 @@ function ScannerComp(id) {
     <div className="scanner-comp">      
       <div className={classes.banner}>
 
-        <img src={require('../imgs/Scanner Banner.png')} className={classes.bannerImg}/>
+        <img src={require('../imgs/Scanner Banner.jpg')} className={classes.bannerImg}/>
         <h1>More Shoots. More Freedom.</h1>
         <h3>
           Kick-start your career with MapScans. Be part of a dynamic,

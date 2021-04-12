@@ -176,7 +176,7 @@ function Process(props) {
 			</div>           
           </Grid>         
           <Grid item xs={12} sm={5} style={{display: 'flex', alignItems: 'flex-end'}}>
-          <img style={{width: '100%'}} src={require('../imgs/Get in Touch.png')}/>
+          <img style={{width: '100%'}} src={require('../imgs/Get in Touch.jpg')}/>
           </Grid>
         </Grid>
       </div>

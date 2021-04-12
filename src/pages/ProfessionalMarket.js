@@ -34,6 +34,7 @@ function Tour({ id }) {
 
   return (
     <div className="pm_tour bg-white" id={id}>
+      <link rel="preload" as="image" href={require('../imgs/Hero Image 1.jpg')} />
       <div className={classes.root}>
         <Grid container spacing={0} justify="space-between">
           <Grid item xs={12} sm={5} className="grid-headercontent">
@@ -55,7 +56,7 @@ function Tour({ id }) {
             </div>
           </Grid>
           <Grid item xs={12} sm={7} className="img-div">
-            <img style={{ width: '100%' }} src={require('../imgs/Hero Image 1.png')} />
+            <img style={{ width: '100%' , height: "100%" }} src={require('../imgs/Hero Image 1.jpg')} />
           </Grid>
         </Grid>
       </div>

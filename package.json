@@ -12,10 +12,6 @@
     "axios": "^0.20.0",
     "cors": "^2.8.5",
     "date-fns": "^2.16.0",
-    "firebase": "^7.19.1",
-    "firebase-admin": "^9.1.1",
-    "firebase-functions": "^3.11.0",
-    "firebase-functions-test": "^0.2.3",
     "nodemailer": "^6.4.11",
     "react": "^16.13.1",
     "react-compare-image": "^3.0.2",
@@ -51,6 +47,5 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "^8.10.0"
   }
 }
