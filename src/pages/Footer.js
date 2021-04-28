@@ -4,24 +4,8 @@ import "./Footer.css";
 import { useHistory, useLocation } from "react-router-dom";
 
 function Footer() {
-  const location = useLocation();
+  // const location = useLocation();
   const history = useHistory();
-
-  const [home, setHome] = useState(true);
-
-  useEffect(() => {
-    if (
-      location.pathname === "/scanner" ||
-      location.pathname === "/3dtour" ||
-      location.pathname === "/videotour" ||
-      location.pathname === "/terms&conditions" ||
-      location.pathname === "/privacypolicy"
-    ) {
-      setHome(false);
-    } else {
-      setHome(true);
-    }
-  }, [location]);
 
   return (
     <div className="footer">

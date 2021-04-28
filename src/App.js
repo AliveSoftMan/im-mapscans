@@ -105,15 +105,19 @@ class App extends Component {
             <Route path="/scanner">
               <ScannerPage openDialog={this.openDialog} />
             </Route>
+            
             <Route path="/3dtour">
               <TourPage />
             </Route>
+
             <Route path="/videotour">
               <VideoPage />
             </Route>
+
             <Route path="/terms&conditions">
               <Terms />
             </Route>
+            
             <Route path="/privacypolicy">
               <Privacy />
             </Route>
@@ -143,7 +147,7 @@ class App extends Component {
         <DialogTitle id="alert-dialog-slide-title" onClose={this.handleClose}>{""}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            <img src={require('./imgs/letter-png.png')}/> <br/>
+            <img src={require('./imgs/letter-png.png')} alt="alt-image"/> <br/>
             {alertText.up} <br/> {alertText.down}
           </DialogContentText>
         </DialogContent>		

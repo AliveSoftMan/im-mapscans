@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import axios from 'axios';
-import { db } from '../firebase';
-import firebase from 'firebase';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import consts from '../consts.json'

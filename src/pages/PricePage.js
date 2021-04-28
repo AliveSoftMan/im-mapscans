@@ -4,7 +4,7 @@ import "./PricePage.css"
 import Ordernow from './Ordernow'
 import PriceComp from './PriceComp'
 
-import { Element, animateScroll as scroll, scroller  } from "react-scroll";
+import {Element} from "react-scroll";
 
 
 function PricePage(props) {

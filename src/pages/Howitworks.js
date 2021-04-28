@@ -1,6 +1,5 @@
 import React from "react";
 import "./Howitworks.css";
-import ProcessCard from "./ProcessCard";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -58,7 +57,8 @@ function Process(id) {
                 <Paper className={`${classes.paper} tour-item active-tour-item`}>
                   <p style={{fontSize: 21, marginTop: 32, fontWeight: 600}}>Our scanners work their magic</p>
                   <p style={{fontSize: 14, marginTop: 36}}>
-                  Our professional will arrive at your property according to your schedule. Typically, our professionals will be in and out of the property in less than an hour.
+                    Our professional will arrive at your property according to your schedule. 
+                    Typically, our professionals will be in and out of the property in less than an hour.
                   </p>
                 </Paper>
               </Grid> 
@@ -67,7 +67,7 @@ function Process(id) {
                 <Paper className={`${classes.paper} tour-item`}>
                   <p style={{fontSize: 21, marginTop: 54, fontWeight: 600}}>We deliver</p>
                   <p style={{fontSize: 14, marginTop: 36}}>
-                  We process the spins using state-of-the-art InsideMaps Technology. Your content will be ready in 24 hours.
+                    We process the spins using state-of-the-art InsideMaps Technology. Your content will be ready in 24 hours.
                   </p>
                 </Paper>
               </Grid> 

@@ -1,15 +1,16 @@
-import React from "react";
+import React, {useState, useRef, useEffect} from "react";
 import "./Tour.css";
 import "./TourCard";
 
-import { Button } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
+import { Button } from "@material-ui/core"
+import { Link } from "react-router-dom"
+import { Link as ScrollLink } from "react-scroll"
 
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import BaSlider from "./BaSlider.js";
+import { makeStyles } from '@material-ui/core/styles'
+// import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid'
+import Iframe from 'react-iframe'
+import BaSlider from "./BaSlider.js"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
   bringListing: {
     width: '92%'
-
   },
+
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
@@ -34,11 +35,35 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 182,
     margin: 'auto'
   },
+  
+  listingFrame:{
+    marginLeft: '8%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  videoFrame:{
+    position: 'absolute',
+    padding: '18px',
+    cursor: 'pointer',
+    marginLeft: '1%',
+    borderRadius: '50%',
+    border: 'hidden',
+    background: 'transparent',
+    color: 'transparent',
+    outline: 'none',
+    outlineOffset: 'unset'
+  }
+
 }));
 
 function Tour({ id }) {
-  const history = useHistory()
+  // const history = useHistory()
   const classes = useStyles()
+  const [bringListing, setBringListing] =  useState(false)
+  const blRef = useRef(null)
+  const blSize = useWindowSize(blRef)
 
   return (
     <div>
@@ -68,20 +93,25 @@ function Tour({ id }) {
                     Book Online
                   </Button>
                 </Link>
+                &nbsp;&nbsp;
+                <Link
+                  to="3dtour">
+                  <Button>
+                    SEE MORE 3D TOURS
+                  </Button>
+                </Link>
+
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <div className="tour__headerContent" style={{display: 'flex', justifyContent: 'flex-end', width: '100%', margin: 0, width: '94%',  marginLeft: "6%"}}>
-                {/* <Link to="3dtour">
-                  <Button>
-                    Explore more
-                  </Button>
-                </Link> */}
-              </div>            
-              {/* <img style={{ width: '88%', marginLeft: '12%' }} src={require('../Images/tour-video.png')} /> */}
+
+              <div className="tour__headerContent" style={{display: 'flex', justifyContent: 'flex-end', margin: 0, width: '94%',  marginLeft: "6%"}}>
+              </div>
+
               <video style={{ width: '94%', marginLeft: '6%', marginTop: '3%'}} autoPlay={true} controls={true} >
                 <source src="assets/homeVideo.mp4" type="video/mp4" />
               </video>
+              
             </Grid>
           </Grid>
         </div>
@@ -92,7 +122,21 @@ function Tour({ id }) {
           <Grid container spacing={5} justify="space-between">
             <Grid item xs={12} sm={6}>
               <div className="img-blue-bg-left">
-                <img style={{ width: '100%', marginLeft: '12%' }} src={require('../Images/bg-1.png')} />
+                <div className={classes.listingFrame}>
+
+                    <img ref={blRef} style={{width: "100%"}}  src={require('../Images/bg-11.png')} alt="alt-image" />
+                    <button className={classes.videoFrame} onClick={()=>setBringListing(true)}>
+                      Play
+                    </button>
+                    {bringListing &&<Iframe
+                      url="https://www.insidemaps.com/app/walkthrough-v2/?propertyId=GaMP2AhxVo&projectId=SZjZcHXGuu&env=production&floorId=o5hIuYt7Ay&spinId=ciQQu5rQ6G_0&quatX=-0.020&quatY=0.698&quatZ=0.020&quatW=0.715&fov=65.0"
+                      width={blSize.width}
+                      height={blSize.height}
+                      display= "initial" 
+                      position="absolute"
+                    />}
+                    
+                </div>
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -181,7 +225,7 @@ function Tour({ id }) {
           <Grid container spacing={5} justify="space-between">
             <Grid item xs={12} sm={6}>
               <div className="img-blue-bg-left">
-                <img style={{ width: '100%', marginLeft: '12%' }} src={require('../Images/floorplan-bg.png')} />
+                <img style={{ width: '100%', marginLeft: '12%' }} src={require('../Images/floorplan-bg.png')} alt="alt-image" />
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -207,5 +251,36 @@ function Tour({ id }) {
     </div>
   );
 }
+
+
+// Hook
+function useWindowSize(ref) {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: Math.round(ref.current.clientWidth * 0.635),
+        height: Math.round(ref.current.clientWidth * 0.40),
+        mleft: Math.round(ref.current.clientWidth * 0.01)
+      })
+
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 
 export default Tour;

@@ -1,8 +1,6 @@
 import React from "react";
 import "./PriceComp.css";
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +29,7 @@ function PriceComp(id) {
   return (
     <div className="price-comp">      
       <div className={classes.banner}>
-        <img alt="image"  src={require('../imgs/Pricing Banner.jpg')} className={classes.bannerImg} />
+        <img   src={require('../imgs/Pricing Banner.jpg')} className={classes.bannerImg} />
         <h1>Pricing</h1>
         <h3>
           Select one of the pricing packages based on your property size
@@ -63,16 +61,16 @@ function PriceComp(id) {
                 3D Virtual Tours
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
             </tr>
             
@@ -81,16 +79,16 @@ function PriceComp(id) {
                 HDR Photos
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
             </tr>
             <tr>
@@ -98,16 +96,16 @@ function PriceComp(id) {
                 Floor Plans
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
               <td>
-                <img alt="image"  src={require('../imgs/Tick-02.svg')}/>
+                <img   src={require('../imgs/Tick-02.svg')}/>
               </td>
             </tr>
 

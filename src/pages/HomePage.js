@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./BecomeScanner.css";
 import "./HomePage.css"
 import Feature from "./Feature"

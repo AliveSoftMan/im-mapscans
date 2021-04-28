@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 function Feature(id) {
   const classes = useStyles();
   return (
-    <div className="feature" id={id}>
+    <div className="feature" id={id.id}>
       <div className="feature__header">
         <h1>What We Do For You</h1>
         <h3>

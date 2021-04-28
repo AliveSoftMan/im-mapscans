@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import "./Subscribe.css";
 
 import { Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 import Grid from '@material-ui/core/Grid';
@@ -88,8 +87,7 @@ function Subscribe({ id, openDialog }) {
 					}
 				}
 			).then(res=>{
-        console.log("res : ", res)
-				if(res.data.status=="success"){
+				if(res.data.status==="success"){
 					openDialog({up :"Thank you for subscribing to our newsletter!", down: "We will get back to you soon- Stay Tuned!"})
 				}else{
           openDialog({up :"Sorry! Unknown Error.", down: "You could not send your subscription."})
